@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="unsign_color">#d4d4d4</color>
+    <color name="signed_color">#ff3a3f</color>
+</resources>
