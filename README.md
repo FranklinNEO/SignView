@@ -42,6 +42,8 @@ An example of basic usage in layout.xml:<br>
         app:unsignColor=""
         app:unSignNormalPic=""
         app:signedNormalPic=""
+        app:unSignSpPic=""
+        app:signedSpPic=""
         ...
 
   
