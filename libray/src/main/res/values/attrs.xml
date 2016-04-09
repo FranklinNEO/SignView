@@ -2,5 +2,15 @@
 <resources>
     <declare-styleable name="SignView">
         <attr name="signedDays" format="integer" />
+        <attr name="unSignNormalPic" format="reference" />
+        <attr name="unSignFivePic" format="reference" />
+        <attr name="unSignTenPic" format="reference" />
+        <attr name="unSignFifteenPic" format="reference" />
+        <attr name="signedNormalPic" format="reference" />
+        <attr name="signedFivePic" format="reference" />
+        <attr name="signedTenPic" format="reference" />
+        <attr name="signedFifteenPic" format="reference" />
+        <attr name="unsignColor" format="color" />
+        <attr name="signedColor" format="color" />
     </declare-styleable>
 </resources>

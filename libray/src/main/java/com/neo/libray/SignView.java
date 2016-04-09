@@ -41,6 +41,17 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
     private Bitmap bitmap_15_signed = null;
 
     private int signedDays = 0;
+    private int unsignColor = 0xD4D4D4;
+    private int signedColor = 0xFF3A3F;
+    private int unSignNormalPic = R.drawable.ic_normal_unsign;
+    private int unSignFivePic = R.drawable.ic_five_unsign;
+    private int unSignTenPic = R.drawable.ic_ten_unsign;
+    private int unSignFifteenPic = R.drawable.ic_fifteen_unsign;
+    private int signedNormalPic= R.drawable.ic_normal_signed;
+    private int signedFivePic=R.drawable.ic_five_signed;
+    private int signedTenPic=R.drawable.ic_ten_signed;
+    private int signedFifteenPic=R.drawable.ic_fifteen_signed;
+
     private int progress = 0;
     private List<CoordinateInfo> coordinateInfos = Arrays.asList(new CoordinateInfo(15, 15), new CoordinateInfo(80, 15), new CoordinateInfo(145, 15), new CoordinateInfo(210, 15), new CoordinateInfo(275, 15),
             new CoordinateInfo(275, 75), new CoordinateInfo(210, 75), new CoordinateInfo(145, 75), new CoordinateInfo(80, 75), new CoordinateInfo(15, 75),
@@ -60,17 +71,27 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SignView, defStyleAttr, 0);
         signedDays = a.getInteger(R.styleable.SignView_signedDays, signedDays);
+        unsignColor = a.getColor(R.styleable.SignView_unsignColor, unsignColor);
+        signedColor = a.getColor(R.styleable.SignView_signedColor, signedColor);
+        unSignNormalPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignNormalPic);
+        unSignFivePic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignFivePic);
+        unSignTenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignTenPic);
+        unSignFifteenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignFifteenPic);
+        signedNormalPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedNormalPic);
+        signedFivePic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedFivePic);
+        signedTenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedTenPic);
+        signedFifteenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedFifteenPic);
         a.recycle();
         setSignedDays(signedDays);
 
-        bitmap_normal_unsign = BitmapFactory.decodeResource(getResources(), R.drawable.ic_normal_unsign);
-        bitmap_5_unsign = BitmapFactory.decodeResource(getResources(), R.drawable.ic_five_unsign);
-        bitmap_10_unsign = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ten_unsign);
-        bitmap_15_unsign = BitmapFactory.decodeResource(getResources(), R.drawable.ic_fifteen_unsign);
-        bitmap_normal_signed = BitmapFactory.decodeResource(getResources(), R.drawable.ic_normal_signed);
-        bitmap_5_signed = BitmapFactory.decodeResource(getResources(), R.drawable.ic_five_signed);
-        bitmap_10_signed = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ten_signed);
-        bitmap_15_signed = BitmapFactory.decodeResource(getResources(), R.drawable.ic_fifteen_signed);
+        bitmap_normal_unsign = BitmapFactory.decodeResource(getResources(), unSignNormalPic);
+        bitmap_5_unsign = BitmapFactory.decodeResource(getResources(), unSignFivePic);
+        bitmap_10_unsign = BitmapFactory.decodeResource(getResources(), unSignTenPic);
+        bitmap_15_unsign = BitmapFactory.decodeResource(getResources(), unSignFifteenPic);
+        bitmap_normal_signed = BitmapFactory.decodeResource(getResources(), signedNormalPic);
+        bitmap_5_signed = BitmapFactory.decodeResource(getResources(), signedFivePic);
+        bitmap_10_signed = BitmapFactory.decodeResource(getResources(), signedTenPic);
+        bitmap_15_signed = BitmapFactory.decodeResource(getResources(), signedFifteenPic);
 
         deflinePaint = new Paint();
         deflinePaint.setAntiAlias(true);
@@ -133,9 +154,9 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
             canvas.drawLine(dp2px(coordinateInfo_now.getX()), dp2px(coordinateInfo_now.getY()), dp2px(coordinateInfo_now.getX() - (102 * progress / 200)), dp2px(coordinateInfo_now.getY()), linePaint);
         }
 
-        if(progress==100){
+        if (progress == 100) {
             signedDays++;
-            progress=0;
+            progress = 0;
             setSignedDays(signedDays);
         }
     }
@@ -245,8 +266,8 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
     }
 
     public void MoveToNext() {
-        if (signedDays == MaxSize){
-            Toast.makeText(getContext(),"已是签到最后一天!",Toast.LENGTH_SHORT).show();
+        if (signedDays == MaxSize) {
+            Toast.makeText(getContext(), "已是签到最后一天!", Toast.LENGTH_SHORT).show();
             return;
         }
         progress = 0;
