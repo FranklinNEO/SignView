@@ -12,7 +12,7 @@ I published the library with Jitpack, so add it to your build.gradle with:<br>
 Add the dependency:<br>
 
     dependencies {
-        compile 'com.github.FranklinNEO:SignView:1.0'
+        compile 'com.github.FranklinNEO:SignView:1.1'
     }
     
 An example of basic usage in layout.xml:<br>
@@ -36,3 +36,12 @@ An example of basic usage in layout.xml:<br>
   This statement declares the number of signed days<br>
   
       app:signedDays="3"
+  declares custom color and drawable with<br>
+  
+        app:signedColor=""
+        app:unsignColor=""
+        app:unSignNormalPic=""
+        app:signedNormalPic=""
+        ...
+
+  
