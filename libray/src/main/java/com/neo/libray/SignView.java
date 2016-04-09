@@ -44,13 +44,9 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
     private int unsignColor = 0xD4D4D4;
     private int signedColor = 0xFF3A3F;
     private int unSignNormalPic = R.drawable.ic_normal_unsign;
-    private int unSignFivePic = R.drawable.ic_five_unsign;
-    private int unSignTenPic = R.drawable.ic_ten_unsign;
-    private int unSignFifteenPic = R.drawable.ic_fifteen_unsign;
+    private int unSignSpPic = R.drawable.ic_sp_unsign;
     private int signedNormalPic= R.drawable.ic_normal_signed;
-    private int signedFivePic=R.drawable.ic_five_signed;
-    private int signedTenPic=R.drawable.ic_ten_signed;
-    private int signedFifteenPic=R.drawable.ic_fifteen_signed;
+    private int signedSpPic=R.drawable.ic_sp_signed;
 
     private int progress = 0;
     private List<CoordinateInfo> coordinateInfos = Arrays.asList(new CoordinateInfo(15, 15), new CoordinateInfo(80, 15), new CoordinateInfo(145, 15), new CoordinateInfo(210, 15), new CoordinateInfo(275, 15),
@@ -74,24 +70,20 @@ public class SignView extends View implements ValueAnimator.AnimatorUpdateListen
         unsignColor = a.getColor(R.styleable.SignView_unsignColor, unsignColor);
         signedColor = a.getColor(R.styleable.SignView_signedColor, signedColor);
         unSignNormalPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignNormalPic);
-        unSignFivePic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignFivePic);
-        unSignTenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignTenPic);
-        unSignFifteenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignFifteenPic);
+        unSignSpPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,unSignSpPic);
         signedNormalPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedNormalPic);
-        signedFivePic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedFivePic);
-        signedTenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedTenPic);
-        signedFifteenPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedFifteenPic);
+        signedSpPic=a.getResourceId(R.styleable.SignView_unSignNormalPic,signedSpPic);
         a.recycle();
         setSignedDays(signedDays);
 
         bitmap_normal_unsign = BitmapFactory.decodeResource(getResources(), unSignNormalPic);
-        bitmap_5_unsign = BitmapFactory.decodeResource(getResources(), unSignFivePic);
-        bitmap_10_unsign = BitmapFactory.decodeResource(getResources(), unSignTenPic);
-        bitmap_15_unsign = BitmapFactory.decodeResource(getResources(), unSignFifteenPic);
+        bitmap_5_unsign = BitmapFactory.decodeResource(getResources(), unSignSpPic);
+        bitmap_10_unsign = BitmapFactory.decodeResource(getResources(), unSignSpPic);
+        bitmap_15_unsign = BitmapFactory.decodeResource(getResources(), unSignSpPic);
         bitmap_normal_signed = BitmapFactory.decodeResource(getResources(), signedNormalPic);
-        bitmap_5_signed = BitmapFactory.decodeResource(getResources(), signedFivePic);
-        bitmap_10_signed = BitmapFactory.decodeResource(getResources(), signedTenPic);
-        bitmap_15_signed = BitmapFactory.decodeResource(getResources(), signedFifteenPic);
+        bitmap_5_signed = BitmapFactory.decodeResource(getResources(), signedSpPic);
+        bitmap_10_signed = BitmapFactory.decodeResource(getResources(), signedSpPic);
+        bitmap_15_signed = BitmapFactory.decodeResource(getResources(), signedSpPic);
 
         deflinePaint = new Paint();
         deflinePaint.setAntiAlias(true);
