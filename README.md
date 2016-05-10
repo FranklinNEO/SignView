@@ -1,4 +1,5 @@
 # SignView
+[ ![Travis CI Status](https://travis-ci.org/DxTT/Do-Not-Disturb.svg?branch=master)](https://travis-ci.org/DxTT/Do-Not-Disturb)
 daily sign view with animation<br><br>
 ![](https://github.com/FranklinNEO/SignView/blob/master/signview-gif.gif)
 #Usage
