@@ -2,4 +2,5 @@
 <resources>
     <color name="unsign_color">#d4d4d4</color>
     <color name="signed_color">#ff3a3f</color>
+    <color name="sign_background_color">#ffffff</color>
 </resources>

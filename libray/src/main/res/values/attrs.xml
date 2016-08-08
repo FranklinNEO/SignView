@@ -2,11 +2,9 @@
 <resources>
     <declare-styleable name="SignView">
         <attr name="signedDays" format="integer" />
-        <attr name="unSignNormalPic" format="reference" />
-        <attr name="unSignSpPic" format="reference"/>
-        <attr name="signedNormalPic" format="reference" />
-        <attr name="signedSpPic" format="reference"/>
+        <attr name="bgSpPic" format="reference"/>
         <attr name="unsignColor" format="color" />
         <attr name="signedColor" format="color" />
+        <attr name="backgroundColor" format="color" />
     </declare-styleable>
 </resources>
